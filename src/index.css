@@ -12,14 +12,18 @@
   font-style: normal;
 }
 
-@theme {
-  --animate-loop-scroll-x: loop-scroll-x 20s linear infinite;
-  @keyframes loop-scroll-x {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
+body {
+  background-color: black;
+  color: white;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+  margin: 100px 0;
 }

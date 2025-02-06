@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import Menu from "./Menu/Menu";
 
 const Header = () => {
+  const [isActive, setIsActive] = useState(false);
+
   return (
-    <div className="flex w-full justify-end items-center p-4 fixed">
-      <div className="menu cursor-pointer flex gap-1 w-12 flex-wrap hover:scale-110 transition-all duration-500">
-        <div className="border-2 bg-blue-950 rounded-md border-blue-950 w-5 h-5"></div>
-        <div className="border-2 bg-blue-950 rounded-md border-blue-950 w-5 h-5"></div>
-        <div className="border-2 bg-blue-950 rounded-md border-blue-950 w-5 h-5"></div>
-        <div className="border-2 bg-blue-950 rounded-md border-blue-950 w-5 h-5"></div>
+    <div className="flex w-full justify-end items-center p-5 fixed top-0 z-50">
+      <div className="menu-container">
+        <Menu isActive={isActive} setIsActive={setIsActive} />
       </div>
     </div>
   );

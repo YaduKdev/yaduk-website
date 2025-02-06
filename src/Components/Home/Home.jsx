@@ -1,64 +1,40 @@
 import React from "react";
+import { motion } from "motion/react";
 
 const Home = () => {
-  const jobPositions = [
-    "FRONTEND DEVELOPER",
-    "BACKEND DEVELOPER",
-    "FULLSTACK DEVELOPER",
-    "MEAN STACK",
-    "MERN STACK",
-  ];
-
   return (
-    <div className="home-container flex flex-col items-center w-full h-screen flex-nowrap">
-      <div className="h-full w-full flex flex-col items-center justify-center text-center">
-        <div className="home-name">
-          <p className="text-6xl primary-rubik mb-6 text-red-500">
-            YADU KRISHNAN
-          </p>
-        </div>
-        <div className="home-job flex justify-center">
-          <div className="home-job-heading relative">
-            <p className="text-7xl w-fit primary-rubik p-7 bg-blue-950 text-white">
-              WEB DEVELOPER
-            </p>
-          </div>
-        </div>
-        <div className="home-tag">
-          <p className="secondary-rubik font-extrabold text-3xl mt-9">
-            Digital craftsmanship for the modern age.
-          </p>
-        </div>
-      </div>
-      <div className="flex bg-blue-950 items-center justify-start w-full overflow-x-hidden">
-        <div className=" h-[15%] p-5 flex justify-start items-center gap-14 flex-nowrap animate-loop-scroll-x">
-          {jobPositions.map((job, idx) => {
-            return (
-              <p
-                key={idx}
-                className="text-5xl p-5 bg-red-500 text-white primary-rubik"
-              >
-                {job}
-              </p>
-            );
-          })}
-        </div>
-        <div
-          className="h-[15%] p-5 flex justify-start items-center gap-14 flex-nowrap animate-loop-scroll-x"
-          aria-hidden="true"
-        >
-          {jobPositions.map((job, idx) => {
-            return (
-              <p
-                key={idx}
-                className="text-5xl p-5 bg-red-500 text-white primary-rubik"
-              >
-                {job}
-              </p>
-            );
-          })}
-        </div>
-      </div>
+    <div className="my-20 px-10 h-full lg:px-20 hero w-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between gap-4 items-center -z-10">
+      <motion.div
+        initial={{ x: "-120%", opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "backOut" }}
+        className="hero-text flex flex-col justify-center items-center text-lime-300 space-y-5 text-center"
+      >
+        <h2 className="text-xl lg:text-5xl primary-rubik">YADU KRISHNAN</h2>
+        <h1 className="text-2xl lg:text-7xl primary-rubik">WEB DEVELOPER</h1>
+        <p className="text-lg lg:text-2xl secondary-rubik mt-4 text-white">
+          Digital Craftmanship For The Modern World
+        </p>
+      </motion.div>
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1, ease: "circInOut" }}
+        className="hero-img relative"
+      >
+        <img
+          src="/2.jpg"
+          alt="Profile Picture"
+          className="max-h-[700px] lg:absolute"
+          style={{ zIndex: "-1" }}
+        />
+        <img
+          src="/blur.jpg"
+          alt="Blurred Picture"
+          className="max-h-[700px] hidden lg:block"
+          style={{ zIndex: "0" }}
+        />
+      </motion.div>
     </div>
   );
 };
