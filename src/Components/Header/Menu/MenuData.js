@@ -12,6 +12,10 @@ export const pageLinks = [
     link: "aboutsection",
   },
   {
+    name: "Certifications",
+    link: "certificationssection",
+  },
+  {
     name: "Contact",
     link: "contactsection",
   },

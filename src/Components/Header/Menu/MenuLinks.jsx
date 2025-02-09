@@ -52,7 +52,7 @@ const MenuLinks = ({ setIsActive }) => {
             <div key={idx} className="page-link-container perspective-[120px]">
               <motion.div
                 custom={idx}
-                className="page-link text-black text-3xl lg:text-4xl secondary-rubik"
+                className="page-link text-black text-3xl secondary-rubik"
                 variants={perspective}
                 animate="enter"
                 exit="exit"

@@ -1,4 +1,5 @@
 import About from "./Components/About/About";
+import Certifications from "./Components/Certifications/Certifications";
 import Contact from "./Components/Contact/Contact";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
@@ -11,9 +12,14 @@ const App = () => {
       <section id="homesection">
         <Home />
       </section>
-      <Projects />
+      <section id="projectssection">
+        <Projects />
+      </section>
       <section id="aboutsection">
         <About />
+      </section>
+      <section id="certificationssection">
+        <Certifications />
       </section>
       <section id="contactsection">
         <Contact />

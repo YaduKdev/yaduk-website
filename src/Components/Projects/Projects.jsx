@@ -1,103 +1,57 @@
-import React, { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  useMotionTemplate,
-} from "motion/react";
+import React, { useState } from "react";
+import Project from "./Project";
+import Modal from "./Modal";
 
 const projectsData = [
   {
     id: 1,
-    img: "/website-img-1.jpg",
+    img: "/website-img-3.png",
     title: "Wearhaus - Clothing Store",
-    desc: "This is a temp description",
+    toolkit: "Angular 19, Tailwind CSS, NgRx Store, NodeJS, MongoDB, Razorpay",
+    desc: "Wearhaus is a responsive web application for an urban clothing store designed for the youth with user and admin panels within the same build and payment integration through Razorpay.",
     websiteUrl: "https://wearhaus.vercel.app/",
   },
   {
     id: 2,
-    img: "/website-img-2.png",
-    title: "Cinematix - Movie Booking App",
-    desc: "This is a temp description",
+    img: "/website-img-4.jpg",
+    title: "Cinematix - Booking App",
+    toolkit: "React, MUI, Redux, NodeJS, MongoDB, Stripe Payments",
+    desc: "Cinematix is a responsive online movie ticket booking application with user and admin panels within the same build and payment integration through Stripe Payments.",
     websiteUrl: "https://cinematix-view.onrender.com/",
   },
   {
     id: 3,
     img: "/website-img-3.png",
     title: "Nived V. - Personal Website",
-    desc: "This is a temp description",
+    toolkit: "React, Sass",
+    desc: "Nived V. is a simple yet creative portfolio website made wihtout any animation libraries.",
     websiteUrl: "https://yadukdev.github.io/NivedV/",
   },
 ];
 
-const Project = ({ project }) => {
-  const ref = useRef();
-  const { scrollYProgress } = useScroll({
-    target: ref,
-  });
-  const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
-
-  return (
-    <section
-      id={project.id === 1 ? "projectssection" : "otherprojects"}
-      className="project"
-    >
-      <div className="project-container flex justify-center items-center w-full h-full overflow-hidden">
-        <div className="wrapper max-w-full px-4 h-full m-auto flex gap-12 items-center justify-center">
-          <div
-            className="img-container flex-1 h-1/2 rounded-xl overflow-hidden"
-            ref={ref}
-          >
-            <img
-              src={project.img}
-              alt={`Preview Picture Of ${project.title}`}
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
-          <motion.div
-            className="project-text flex-1 flex flex-col gap-7"
-            style={{ y, transition: { ease: "easeInOut" } }}
-          >
-            <h2 className="primary-rubik text-xl lg:text-4xl text-pink-600">
-              {project.title}
-            </h2>
-            <p className="text-lg lg:text-3xl">{project.desc}</p>
-            <button className="primary-rubik rounded-2xl border-none px-4 py-2 bg-white text-black w-[200px] cursor-pointer">
-              View Website
-            </button>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
 const Projects = () => {
-  const ref = useRef();
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["end end", "start start"],
-  });
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-  });
-
+  const [modal, setModal] = useState({ active: false, index: 0 });
   return (
-    <div className="projects secondary-rubik relative" ref={ref}>
-      <div className="progress sticky top-0 left-0 text-center z-10">
-        <h1 className="project-header primary-rubik text-xl lg:text-6xl p-7 bg-black text-pink-600">
-          Projects
-        </h1>
-        <motion.div
-          style={{ scaleX }}
-          className="progress-bar h-2.5 bg-pink-600"
-        ></motion.div>
+    <div>
+      <h1 className="projects-head primary-rubik text-center text-xl lg:text-6xl pt-20 mb-20">
+        Projects
+      </h1>
+      <div className="h-full flex justify-center items-center relative">
+        <div className="w-[80%] lg:w-[60%]">
+          {projectsData.map((project, idx) => {
+            return (
+              <Project
+                key={idx}
+                index={idx}
+                title={project.title}
+                setModal={setModal}
+                isLast={idx === projectsData.length - 1 ? true : false}
+              />
+            );
+          })}
+        </div>
+        <Modal modal={modal} projects={projectsData} />
       </div>
-      {projectsData.map((project) => (
-        <Project project={project} key={project.id} />
-      ))}
     </div>
   );
 };
