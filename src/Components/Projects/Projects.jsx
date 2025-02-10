@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Project from "./Project";
 import Modal from "./Modal";
 import ProjectDetails from "./ProjectDetails";
@@ -60,12 +60,32 @@ const Projects = () => {
     active: false,
     indexValue: 0,
   });
+  const isAnimating = useRef(false);
 
   useEffect(() => {
-    document.body.style.overflow = toggleDetails.active ? "hidden" : "unset";
+    let timeoutId;
+
+    if (toggleDetails.active) {
+      document.body.style.overflow = "hidden";
+      isAnimating.current = false;
+    } else {
+      isAnimating.current = true;
+      document.body.style.overflow = "hidden";
+
+      timeoutId = setTimeout(() => {
+        if (isAnimating.current) {
+          // Only unset if we're still animating
+          document.body.style.overflow = "unset";
+          isAnimating.current = false;
+        }
+      }, 1000);
+    }
 
     return () => {
-      document.body.style.overflow = "unset";
+      clearTimeout(timeoutId);
+      if (!isAnimating.current) {
+        document.body.style.overflow = "unset";
+      }
     };
   }, [toggleDetails.active]);
 
