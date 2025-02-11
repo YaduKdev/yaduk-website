@@ -7,13 +7,17 @@ import { AnimatePresence } from "motion/react";
 const projectsData = [
   {
     id: 1,
-    img: "/website-img-3.png",
+    img: "/website-img-1.jpg",
     pageImg: "/full-preview-1.jpeg",
     title: "Wearhaus - Clothing Store",
     toolkit:
       "Angular 19, Tailwind CSS, Angular Material, NgRx Store, NodeJS, MongoDB, Razorpay",
     desc: "Wearhaus is a web application for an urban clothing store designed for the youth.",
-    websiteUrl: "https://wearhaus.vercel.app/",
+    links: {
+      websiteUrl: "https://wearhaus.vercel.app/",
+      viewUrl: "https://github.com/YaduKdev/wearhaus-view",
+      apiUrl: "https://github.com/YaduKdev/wearhaus-api",
+    },
     keyFeatures: [
       "Dynamic light and dark Mode",
       "User and admin panels within the same build",
@@ -29,7 +33,11 @@ const projectsData = [
     title: "Cinematix - Booking App",
     toolkit: "React, MUI, Redux, NodeJS, MongoDB, Stripe Payments",
     desc: "Cinematix is a responsive online movie ticket booking application with user and admin panels within the same build and payment integration through Stripe Payments.",
-    websiteUrl: "https://cinematix-view.onrender.com/",
+    links: {
+      websiteUrl: "https://cinematix-view.onrender.com/",
+      viewUrl: "https://github.com/YaduKdev/cinematix-view",
+      apiUrl: "https://github.com/YaduKdev/cinematix-api",
+    },
     keyFeatures: [
       "Dynamic light and dark Mode",
       "User and admin panels within the same build",
@@ -40,12 +48,15 @@ const projectsData = [
   },
   {
     id: 3,
-    img: "/website-img-3.png",
+    img: "/website-img-3.jpg",
     pageImg: "/full-preview-3.jpeg",
     title: "Nived V. - Personal Website",
     toolkit: "React, Sass",
     desc: "Nived V. is a simple yet creative portfolio website for Nived V.",
-    websiteUrl: "https://yadukdev.github.io/NivedV/",
+    links: {
+      websiteUrl: "https://yadukdev.github.io/NivedV/",
+      viewUrl: "https://github.com/YaduKdev/NivedV",
+    },
     keyFeatures: [
       "LIVE Project",
       "Animations using vanilla javascript",
@@ -115,6 +126,9 @@ const Projects = () => {
         {toggleDetails.active && (
           <ProjectDetails
             setToggleDetails={setToggleDetails}
+            toggleDetails={toggleDetails}
+            projectsLength={projectsData.length}
+            projects={projectsData}
             project={projectsData[toggleDetails.indexValue]}
           />
         )}

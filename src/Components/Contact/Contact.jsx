@@ -53,6 +53,7 @@ const Contact = () => {
         }
       );
   };
+
   return (
     <motion.div
       className="contact secondary-rubik h-full w-full m-auto flex flex-col lg:flex-row justify-center lg:justify-baseline items-center gap-12"

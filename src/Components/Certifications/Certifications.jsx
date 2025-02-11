@@ -34,7 +34,7 @@ const Certifications = () => {
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
         className="certifications-head primary-rubik text-xl lg:text-6xl"
       >
         Certifications
@@ -43,40 +43,40 @@ const Certifications = () => {
         {certificationData.map((certificate, idx) => {
           return (
             <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
+              // initial={{ scale: 0 }}
+              // whileInView={{ scale: 1 }}
+              // transition={{ duration: 0.8, ease: "easeInOut" }}
               key={idx}
               className="flex flex-col w-[90%] lg:w-80 lg:h-44 p-2 lg:p-4 bg-white relative"
             >
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.8, ease: "easeIn" }}
+                transition={{ duration: 1, ease: "easeIn" }}
                 className="absolute -top-1 -left-1 w-[35%] h-[35%] bg-lime-300 rounded-lg -z-1"
               />
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.8, ease: "easeIn" }}
+                transition={{ duration: 1, ease: "easeIn" }}
                 className="absolute -top-1 -right-1 w-[35%] h-[35%] bg-lime-300 rounded-lg -z-1"
               />
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.8, ease: "easeIn" }}
+                transition={{ duration: 1, ease: "easeIn" }}
                 className="absolute -bottom-1 -left-1 w-[35%] h-[35%] bg-lime-300 rounded-lg -z-1"
               />
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.8, ease: "easeIn" }}
+                transition={{ duration: 1, ease: "easeIn" }}
                 className="absolute -bottom-1 -right-1 w-[35%] h-[35%] bg-lime-300 rounded-lg -z-1"
               />
               <motion.h1
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
+                transition={{ duration: 0.3, ease: "easeIn" }}
                 className="text-lg text-center mb-3"
               >
                 {certificate.name}
@@ -84,7 +84,7 @@ const Certifications = () => {
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
+                transition={{ duration: 0.3, ease: "easeIn" }}
                 className="text-sm text-center"
               >
                 {certificate.platform}
@@ -92,7 +92,7 @@ const Certifications = () => {
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
+                transition={{ duration: 0.3, ease: "easeIn" }}
                 className="text-sm text-gray-500 text-center mb-2"
               >
                 {certificate.completionDate}
@@ -100,7 +100,7 @@ const Certifications = () => {
               <motion.a
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
+                transition={{ duration: 0.3, ease: "easeIn" }}
                 href={certificate.link}
                 target="_blank"
                 rel="noreferrer"

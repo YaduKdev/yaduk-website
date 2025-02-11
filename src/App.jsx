@@ -1,6 +1,7 @@
 import About from "./Components/About/About";
 import Certifications from "./Components/Certifications/Certifications";
 import Contact from "./Components/Contact/Contact";
+import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Projects from "./Components/Projects/Projects";
@@ -23,6 +24,9 @@ const App = () => {
       </section>
       <section id="contactsection">
         <Contact />
+      </section>
+      <section>
+        <Footer />
       </section>
     </div>
   );

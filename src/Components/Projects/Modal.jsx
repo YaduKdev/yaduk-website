@@ -21,8 +21,8 @@ const scaleAnimation = {
 const Modal = ({ modal, projects }) => {
   const { active, index } = modal;
   const container = useRef(null);
-  const cursor = useRef(null);
-  const cursorLabel = useRef(null);
+  // const cursor = useRef(null);
+  // const cursorLabel = useRef(null);
 
   useEffect(() => {
     const moveContainerX = gsap.quickTo(container.current, "left", {
@@ -34,33 +34,33 @@ const Modal = ({ modal, projects }) => {
       ease: "power3",
     });
 
-    const moveCursorX = gsap.quickTo(cursor.current, "left", {
-      duration: 0.5,
-      ease: "power3",
-    });
-    const moveCursorY = gsap.quickTo(cursor.current, "top", {
-      duration: 0.5,
-      ease: "power3",
-    });
+    // const moveCursorX = gsap.quickTo(cursor.current, "left", {
+    //   duration: 0.5,
+    //   ease: "power3",
+    // });
+    // const moveCursorY = gsap.quickTo(cursor.current, "top", {
+    //   duration: 0.5,
+    //   ease: "power3",
+    // });
 
-    const moveCursorLabelX = gsap.quickTo(cursorLabel.current, "left", {
-      duration: 0.45,
-      ease: "power3",
-    });
-    const moveCursorLabelY = gsap.quickTo(cursorLabel.current, "top", {
-      duration: 0.45,
-      ease: "power3",
-    });
+    // const moveCursorLabelX = gsap.quickTo(cursorLabel.current, "left", {
+    //   duration: 0.45,
+    //   ease: "power3",
+    // });
+    // const moveCursorLabelY = gsap.quickTo(cursorLabel.current, "top", {
+    //   duration: 0.45,
+    //   ease: "power3",
+    // });
 
     window.addEventListener("mousemove", (e) => {
       const { clientX, clientY } = e;
 
       moveContainerX(clientX);
       moveContainerY(clientY);
-      moveCursorX(clientX);
-      moveCursorY(clientY);
-      moveCursorLabelX(clientX);
-      moveCursorLabelY(clientY);
+      // moveCursorX(clientX);
+      // moveCursorY(clientY);
+      // moveCursorLabelX(clientX);
+      // moveCursorLabelY(clientY);
     });
   }, []);
 
@@ -71,7 +71,7 @@ const Modal = ({ modal, projects }) => {
         variants={scaleAnimation}
         initial={"initial"}
         animate={active ? "open" : "closed"}
-        className="h-[350px] w-[400px] flex items-center justify-center absolute overflow-hidden pointer-events-none"
+        className="h-[350px] w-[400px] md:flex hidden items-center justify-center absolute overflow-hidden pointer-events-none"
       >
         <div
           style={{ top: index * -100 + "%" }}
@@ -93,7 +93,7 @@ const Modal = ({ modal, projects }) => {
           })}
         </div>
       </motion.div>
-      <motion.div
+      {/* <motion.div
         ref={cursor}
         variants={scaleAnimation}
         initial={"initial"}
@@ -108,7 +108,7 @@ const Modal = ({ modal, projects }) => {
         className="w-[80px] h-[80px] absolute pointer-events-none rounded-full flex justify-center items-center secondary-rubik"
       >
         VIEW
-      </motion.div>
+      </motion.div> */}
     </>
   );
 };
