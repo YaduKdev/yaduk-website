@@ -1,36 +1,11 @@
 import React from "react";
 import { motion } from "motion/react";
+import { GoArrowUpRight } from "react-icons/go";
+import { certificationData } from "../../Data/Data";
 
 const Certifications = () => {
-  const certificationData = [
-    {
-      name: "Web Design For Everybody",
-      platform: "University Of Michigan",
-      link: "https://drive.google.com/file/d/1EIrp_hVYqnw4HCV7pr9x4dOjLponHSDP/view",
-      completionDate: "2025",
-    },
-    {
-      name: "Google Cloud Essentials",
-      platform: "Google Cloud Skills Boost",
-      link: "https://www.cloudskillsboost.google/public_profiles/45c6318c-6ce8-4498-a623-2263a4d3a001",
-      completionDate: "2023-2024",
-    },
-    {
-      name: "Programming Essentials In Python",
-      platform: "Cisco Networking Academy",
-      link: "https://drive.google.com/file/d/1Cc9ufECCc4gQiJLdvPdmnZQ0EsI4gWqq/view",
-      completionDate: "2024",
-    },
-    {
-      name: "SQL Fundamentals",
-      platform: "Oracle",
-      link: "https://drive.google.com/file/d/1UVW-uppS0Ubq3AUigRQzqs6saWT2Fe8v/view",
-      completionDate: "2014",
-    },
-  ];
-
   return (
-    <div className="mt-32 certifications w-full h-full secondary-rubik flex flex-col justify-center items-center space-y-7 lg:space-y-32">
+    <div className="mt-32 certifications w-full h-full secondary-rubik flex flex-col justify-center items-center space-y-7 lg:space-y-24">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -39,75 +14,39 @@ const Certifications = () => {
       >
         Certifications
       </motion.div>
-      <div className="certifications-content flex flex-col lg:flex-row flex-wrap justify-center items-center gap-6">
+      <div className="certifications-content flex flex-col lg:flex-row flex-wrap justify-center items-center gap-6 w-[80%] lg:w-[60%]">
         {certificationData.map((certificate, idx) => {
           return (
-            <motion.div
-              // initial={{ scale: 0 }}
-              // whileInView={{ scale: 1 }}
-              // transition={{ duration: 0.8, ease: "easeInOut" }}
-              key={idx}
-              className="flex flex-col w-[90%] lg:w-80 lg:h-44 p-2 lg:p-4 bg-white relative"
+            <div
+              key={`cert_${idx}`}
+              className="flex justify-between w-full items-center border-t border-gray-400 py-5 px-5 group hover:opacity-40 transition-all duration-400 ease-linear cursor-pointer"
+              style={
+                idx == certificationData.length - 1
+                  ? { borderBottom: "1px solid #99a1af" }
+                  : undefined
+              }
             >
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-                className="absolute -top-1 -left-1 w-[35%] h-[35%] bg-lime-300 rounded-lg -z-1"
-              />
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-                className="absolute -top-1 -right-1 w-[35%] h-[35%] bg-lime-300 rounded-lg -z-1"
-              />
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-                className="absolute -bottom-1 -left-1 w-[35%] h-[35%] bg-lime-300 rounded-lg -z-1"
-              />
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-                className="absolute -bottom-1 -right-1 w-[35%] h-[35%] bg-lime-300 rounded-lg -z-1"
-              />
-              <motion.h1
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.3, ease: "easeIn" }}
-                className="text-lg text-center mb-3"
-              >
-                {certificate.name}
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.3, ease: "easeIn" }}
-                className="text-sm text-center"
-              >
-                {certificate.platform}
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.3, ease: "easeIn" }}
-                className="text-sm text-gray-500 text-center mb-2"
-              >
-                {certificate.completionDate}
-              </motion.p>
-              <motion.a
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.3, ease: "easeIn" }}
+              <div className="flex flex-col">
+                <h2 className="secondary-rubik text-xl lg:text-3xl group-hover:-translate-x-2.5 transition-all duration-200 ease-linear">
+                  {certificate.name}
+                </h2>
+                <p className="secondary-rubik text-lg lg:text-xl group-hover:-translate-x-2.5 transition-all duration-200 ease-linear">
+                  {certificate.platform}
+                </p>
+                <p className="secondary-rubik text-sm lg:text-lg group-hover:-translate-x-2.5 transition-all duration-200 ease-linear">
+                  {certificate.completionDate}
+                </p>
+              </div>
+              <a
                 href={certificate.link}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
-                <p className="text-center">View Certificate</p>
-              </motion.a>
-            </motion.div>
+                <p className="group-hover:translate-x-2.5 transition-all duration-200 ease-linear text-3xl">
+                  <GoArrowUpRight />
+                </p>
+              </a>
+            </div>
           );
         })}
       </div>

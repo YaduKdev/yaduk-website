@@ -1,6 +1,11 @@
 import React from "react";
+import { menuData } from "../../Data/Data";
+import { homeData } from "../../Data/Data";
 
 const Footer = () => {
+  const { pageLinks, socialLinks } = menuData;
+  const { cv } = homeData;
+
   return (
     <div
       className="relative w-full h-[100vh] z-50"
@@ -13,21 +18,17 @@ const Footer = () => {
               Sitemap
             </h1>
             <div className="flex flex-col gap-4">
-              <a href="#homesection" className="hover:text-lime-300">
-                Home
-              </a>
-              <a href="#projectssection" className="hover:text-lime-300">
-                Projects
-              </a>
-              <a href="#aboutsection" className="hover:text-lime-300">
-                About
-              </a>
-              <a href="#certificationssection" className="hover:text-lime-300">
-                Certifications
-              </a>
-              <a href="#contactsection" className="hover:text-lime-300">
-                Contact
-              </a>
+              {pageLinks.map((link, idx) => {
+                return (
+                  <a
+                    key={`footerp_${idx}`}
+                    href={link.link}
+                    className="hover:text-lime-300"
+                  >
+                    {link.name}
+                  </a>
+                );
+              })}
             </div>
           </div>
           <div className="social-links-container flex flex-col text-lg md:text-xl">
@@ -35,25 +36,22 @@ const Footer = () => {
               Links
             </h1>
             <div className="flex flex-col gap-4">
+              {socialLinks.map((link, idx) => {
+                return (
+                  <a
+                    key={`fooerS_${idx}`}
+                    href={link.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-lime-300"
+                  >
+                    {link.name}
+                  </a>
+                );
+              })}
               <a
-                href="https://github.com/YaduKdev/"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-lime-300"
-              >
-                Linked In
-              </a>
-              <a
-                href="https://www.linkedin.com/in/yadu-krishnan-web-developer/"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-lime-300"
-              >
-                Github
-              </a>
-              <a
-                href="/YaduKrishnanCV.pdf"
-                download="YaduKrishnanCV.pdf"
+                href={cv.location}
+                download={cv.name}
                 className="hover:text-lime-300"
               >
                 Download CV
@@ -62,7 +60,7 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <h1 className="text-5xl md:text-9xl primary-rubik">
+          <h1 className="text-5xl md:text-9xl secondary-rubik font-extrabold">
             {" "}
             &copy; {new Date().getFullYear()} Yadu Krishnan
           </h1>

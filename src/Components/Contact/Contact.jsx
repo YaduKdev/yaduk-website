@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "motion/react";
+import { contactData } from "../../Data/Data";
 
 const variants = {
   initial: {
@@ -18,6 +19,7 @@ const variants = {
 };
 
 const Contact = () => {
+  const { emailID, location, phone } = contactData;
   const form = useRef();
 
   const [name, setName] = useState("");
@@ -75,9 +77,9 @@ const Contact = () => {
           className="contact-text flex flex-col gap-2 lg:gap-6"
           variants={variants}
         >
-          <h2 className="text-lg lg:text-2xl">yaduk.developer@gmail.com</h2>
-          <h2 className="text-lg lg:text-2xl">Mumbai, India</h2>
-          <h2 className="text-lg lg:text-2xl">+91 9137832949</h2>
+          <h2 className="text-lg lg:text-2xl">{emailID}</h2>
+          <h2 className="text-lg lg:text-2xl">{location}</h2>
+          <h2 className="text-lg lg:text-2xl">{phone}</h2>
         </motion.div>
       </motion.div>
       <div className="form-container w-[80%] lg:w-[40%]">

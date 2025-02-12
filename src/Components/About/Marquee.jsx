@@ -1,23 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 
-const Marquee = () => {
-  const marqueeData = [
-    "HTML",
-    "CSS",
-    "Tailwind CSS",
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Redux",
-    "Motion",
-    "Angular",
-    "NgRx Store",
-    "NodeJS",
-    "MongoDB",
-    "SQL",
-  ];
-
+const Marquee = ({ marqueeData }) => {
   return (
     <div className="mx-auto">
       <div className="flex items-center h-16 lg:h-24 bg-lime-300">

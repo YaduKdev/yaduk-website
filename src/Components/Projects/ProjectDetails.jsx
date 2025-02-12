@@ -6,7 +6,6 @@ import { GoChevronRight } from "react-icons/go";
 const ProjectDetails = ({
   setToggleDetails,
   project,
-  projectsLength,
   projects,
   toggleDetails,
 }) => {
@@ -19,19 +18,6 @@ const ProjectDetails = ({
     };
   };
 
-  //   const slide = {
-  //     initial: {
-  //       top: "100vh",
-  //     },
-  //     enter: {
-  //       top: "100vh",
-  //     },
-
-  //     exit: {
-  //       top: "0",
-  //       transition: { duration: 2, ease: [0.76, 0, 0.24, 1] },
-  //     },
-  //   };
   const slide = {
     initial: {
       y: "100%",
@@ -44,7 +30,7 @@ const ProjectDetails = ({
         y: {
           duration: 1,
           ease: [0.76, 0, 0.24, 1],
-          times: [0, 1], // This controls the timing of each keyframe
+          times: [0, 1],
         },
       },
     },
@@ -55,7 +41,7 @@ const ProjectDetails = ({
         y: {
           duration: 1,
           ease: [0.76, 0, 0.24, 1],
-          times: [0, 1], // This controls the timing of each keyframe
+          times: [0, 1],
         },
       },
     },
@@ -352,7 +338,7 @@ const ProjectDetails = ({
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                className="h-[50vh] lg:h-[70vh] rounded-xl border-2 border-black overflow-hidden"
+                className="h-[50vh] lg:h-[70vh] rounded-xl shadow-xl shadow-gray-500 overflow-hidden"
               >
                 <img
                   className="h-full object-top"

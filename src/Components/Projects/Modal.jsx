@@ -34,33 +34,11 @@ const Modal = ({ modal, projects }) => {
       ease: "power3",
     });
 
-    // const moveCursorX = gsap.quickTo(cursor.current, "left", {
-    //   duration: 0.5,
-    //   ease: "power3",
-    // });
-    // const moveCursorY = gsap.quickTo(cursor.current, "top", {
-    //   duration: 0.5,
-    //   ease: "power3",
-    // });
-
-    // const moveCursorLabelX = gsap.quickTo(cursorLabel.current, "left", {
-    //   duration: 0.45,
-    //   ease: "power3",
-    // });
-    // const moveCursorLabelY = gsap.quickTo(cursorLabel.current, "top", {
-    //   duration: 0.45,
-    //   ease: "power3",
-    // });
-
     window.addEventListener("mousemove", (e) => {
       const { clientX, clientY } = e;
 
       moveContainerX(clientX);
       moveContainerY(clientY);
-      // moveCursorX(clientX);
-      // moveCursorY(clientY);
-      // moveCursorLabelX(clientX);
-      // moveCursorLabelY(clientY);
     });
   }, []);
 
@@ -93,22 +71,6 @@ const Modal = ({ modal, projects }) => {
           })}
         </div>
       </motion.div>
-      {/* <motion.div
-        ref={cursor}
-        variants={scaleAnimation}
-        initial={"initial"}
-        animate={active ? "open" : "closed"}
-        className="w-[80px] h-[80px] bg-lime-300 absolute pointer-events-none rounded-full flex justify-center items-center"
-      ></motion.div>
-      <motion.div
-        ref={cursorLabel}
-        variants={scaleAnimation}
-        initial={"initial"}
-        animate={active ? "open" : "closed"}
-        className="w-[80px] h-[80px] absolute pointer-events-none rounded-full flex justify-center items-center secondary-rubik"
-      >
-        VIEW
-      </motion.div> */}
     </>
   );
 };

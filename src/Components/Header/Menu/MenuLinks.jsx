@@ -1,5 +1,5 @@
 import React from "react";
-import { pageLinks, socialLinks } from "./MenuData";
+import { menuData } from "../../../Data/Data";
 import { motion } from "motion/react";
 
 const perspective = {
@@ -44,6 +44,8 @@ const slideIn = {
 };
 
 const MenuLinks = ({ setIsActive }) => {
+  const { pageLinks, socialLinks } = menuData;
+
   return (
     <div className="h-full px-[40px] pt-[100px] pb-[50px] box-border flex flex-col justify-between w-[90%]">
       <div className="page-links flex flex-col gap-3">
