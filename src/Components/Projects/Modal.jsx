@@ -21,8 +21,6 @@ const scaleAnimation = {
 const Modal = ({ modal, projects }) => {
   const { active, index } = modal;
   const container = useRef(null);
-  // const cursor = useRef(null);
-  // const cursorLabel = useRef(null);
 
   useEffect(() => {
     const moveContainerX = gsap.quickTo(container.current, "left", {
@@ -34,12 +32,16 @@ const Modal = ({ modal, projects }) => {
       ease: "power3",
     });
 
-    window.addEventListener("mousemove", (e) => {
+    const trackMouse = (e) => {
       const { clientX, clientY } = e;
 
       moveContainerX(clientX);
       moveContainerY(clientY);
-    });
+    };
+
+    window.addEventListener("mousemove", trackMouse);
+
+    return () => window.removeEventListener("mousemove", trackMouse);
   }, []);
 
   return (
