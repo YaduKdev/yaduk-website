@@ -3,7 +3,7 @@ export const homeData = {
   jobPosition: "WEB DEVELOPER",
   cv: {
     name: "YaduKrishnanCV.pdf",
-    location: "./YaduKrishnanCV.pdf",
+    location: "./YaduKrishnan-CV.pdf",
   },
   techStack: [
     "MEAN/MERN Stack Developer",
