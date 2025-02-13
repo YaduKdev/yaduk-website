@@ -3,7 +3,7 @@ export const homeData = {
   jobPosition: "WEB DEVELOPER",
   cv: {
     name: "YaduKrishnanCV.pdf",
-    location: "/yaduk-website/YaduKrishnanCV.pdf",
+    location: "./YaduKrishnanCV.pdf",
   },
   techStack: [
     "MEAN/MERN Stack Developer",
@@ -53,8 +53,8 @@ export const menuData = {
 export const projectsData = [
   {
     id: 1,
-    img: "/yaduk-website/project-previews/website-img-1.jpg",
-    pageImg: "/yaduk-website/project-previews/full-preview-1.jpeg",
+    img: "./project-previews/website-img-1.jpg",
+    pageImg: "./project-previews/full-preview-1.jpeg",
     title: "Wearhaus - Clothing Store",
     toolkit:
       "Angular 19, Tailwind CSS, Angular Material, NgRx Store, NodeJS, MongoDB, Razorpay",
@@ -74,8 +74,8 @@ export const projectsData = [
   },
   {
     id: 2,
-    img: "/yaduk-website/project-previews/website-img-2.jpg",
-    pageImg: "/yaduk-website/project-previews/full-preview-2.jpeg",
+    img: "./project-previews/website-img-2.jpg",
+    pageImg: "./project-previews/full-preview-2.jpeg",
     title: "Cinematix - Booking App",
     toolkit: "React, MUI, Redux, NodeJS, MongoDB, Stripe Payments",
     desc: "Cinematix is a responsive online movie ticket booking application with user and admin panels within the same build and payment integration through Stripe Payments.",
@@ -94,8 +94,8 @@ export const projectsData = [
   },
   {
     id: 3,
-    img: "/yaduk-website/project-previews/website-img-3.jpg",
-    pageImg: "/yaduk-website/project-previews/full-preview-3.jpeg",
+    img: "./project-previews/website-img-3.jpg",
+    pageImg: "./project-previews/full-preview-3.jpeg",
     title: "Nived V. - Personal Website",
     toolkit: "React, Sass",
     desc: "Nived V. is a simple yet creative portfolio website for Nived V.",
