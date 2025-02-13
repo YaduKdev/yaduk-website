@@ -96,6 +96,23 @@ export const projectsData = [
     id: 3,
     img: "./project-previews/website-img-3.jpg",
     pageImg: "./project-previews/full-preview-3.jpeg",
+    title: "Yadu K. - Personal Website",
+    toolkit: "React, Tailwind CSS, Motion, GSAP",
+    desc: "Yadu K. is my portfolio website to showcase my skills and knowledge.",
+    links: {
+      websiteUrl: "https://yadukdev.github.io/yaduk-website/",
+      viewUrl: "https://github.com/YaduKdev/yaduk-website",
+    },
+    keyFeatures: [
+      "Animations using Motion (formally Framer Motion).",
+      "Animations using GSAP",
+      "Fully Responsive",
+    ],
+  },
+  {
+    id: 4,
+    img: "./project-previews/website-img-4.jpg",
+    pageImg: "./project-previews/full-preview-4.jpeg",
     title: "Nived V. - Personal Website",
     toolkit: "React, Sass",
     desc: "Nived V. is a simple yet creative portfolio website for Nived V.",
