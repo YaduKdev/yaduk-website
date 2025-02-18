@@ -14,39 +14,40 @@ const Certifications = () => {
       >
         Certifications
       </motion.div>
-      <div className="certifications-content flex flex-col lg:flex-row flex-wrap justify-center items-center gap-6 w-[80%] lg:w-[60%]">
+      <div className="certifications-content flex flex-col flex-wrap justify-center items-center gap-6 w-[80%] lg:w-[60%]">
         {certificationData.map((certificate, idx) => {
           return (
-            <div
+            <a
               key={`cert_${idx}`}
-              className="flex justify-between w-full items-center border-t border-gray-400 py-5 px-5 group hover:opacity-40 transition-all duration-400 ease-linear cursor-pointer"
-              style={
-                idx == certificationData.length - 1
-                  ? { borderBottom: "1px solid #99a1af" }
-                  : undefined
-              }
+              href={certificate.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
             >
-              <div className="flex flex-col">
-                <h2 className="secondary-rubik text-xl lg:text-3xl group-hover:-translate-x-2.5 transition-all duration-200 ease-linear">
-                  {certificate.name}
-                </h2>
-                <p className="secondary-rubik text-lg lg:text-xl group-hover:-translate-x-2.5 transition-all duration-200 ease-linear">
-                  {certificate.platform}
-                </p>
-                <p className="secondary-rubik text-sm lg:text-lg group-hover:-translate-x-2.5 transition-all duration-200 ease-linear">
-                  {certificate.completionDate}
-                </p>
-              </div>
-              <a
-                href={certificate.link}
-                target="_blank"
-                rel="noopener noreferrer"
+              <div
+                className="flex justify-between w-full items-center border-t border-gray-400 py-5 px-5 group hover:opacity-40 transition-all duration-400 ease-linear cursor-pointer"
+                style={
+                  idx == certificationData.length - 1
+                    ? { borderBottom: "1px solid #99a1af" }
+                    : undefined
+                }
               >
+                <div className="flex flex-col">
+                  <h2 className="secondary-rubik text-xl lg:text-3xl group-hover:-translate-x-2.5 transition-all duration-200 ease-linear">
+                    {certificate.name}
+                  </h2>
+                  <p className="secondary-rubik text-lg lg:text-xl group-hover:-translate-x-2.5 transition-all duration-200 ease-linear">
+                    {certificate.platform}
+                  </p>
+                  <p className="secondary-rubik text-sm lg:text-lg group-hover:-translate-x-2.5 transition-all duration-200 ease-linear">
+                    {certificate.completionDate}
+                  </p>
+                </div>
                 <p className="group-hover:translate-x-2.5 transition-all duration-200 ease-linear text-3xl">
                   <GoArrowUpRight />
                 </p>
-              </a>
-            </div>
+              </div>
+            </a>
           );
         })}
       </div>

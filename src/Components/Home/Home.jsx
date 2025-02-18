@@ -42,7 +42,7 @@ const Home = () => {
           <a
             href={cv.location}
             download={cv.name}
-            className="mt-4 text-sm lg:text-2xl rounded-full px-4 py-2 bg-black text-white secondary-rubik hover:bg-lime-300 hover:text-black transition-all ease-in-out duration-500"
+            className="mt-4 text-sm lg:text-2xl rounded-full px-4 py-2 bg-black dark:bg-white text-white dark:text-black secondary-rubik hover:bg-lime-300 dark:hover:bg-yellow-300 hover:text-black dark:hover:text-black transition-all ease-in-out duration-500"
           >
             Download CV
           </a>
