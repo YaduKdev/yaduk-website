@@ -159,28 +159,28 @@ const ProjectDetails = ({
       <motion.div
         {...anim(slide)}
         layoutId="projectTransition"
-        className="fixed top-0 left-0 bg-lime-300 w-full h-[100vh] z-50 flex flex-wrap justify-center items-center"
+        className="fixed top-0 left-0 bg-lime-300 dark:bg-yellow-300 w-full h-[100vh] z-50 flex flex-wrap justify-center items-center"
       >
         <motion.h1
           {...anim(slideHeadExit)}
-          className="primary-rubik text-3xl lg:text-7xl"
+          className="primary-rubik text-3xl lg:text-7xl text-black dark:text-black"
         >
           Projects
         </motion.h1>
         <motion.h1
           {...anim(slideHeadEnter)}
-          className="primary-rubik text-3xl lg:text-7xl"
+          className="primary-rubik text-3xl lg:text-7xl text-black dark:text-black"
         >
           {project.title}
         </motion.h1>
       </motion.div>
       <motion.div
         {...anim(opacity)}
-        className="w-full h-[100vh] fixed top-0 left-0 bg-white z-40 overflow-y-scroll"
+        className="w-full h-[100vh] fixed top-0 left-0 bg-white dark:bg-black z-40 overflow-y-scroll"
       >
         <div
           onClick={() => setToggleDetails({ active: false, indexValue: 0 })}
-          className="cursor-pointer py-2 px-4 rounded-full bg-black text-white fixed top-2 right-7 secondary-rubik text-xl hover:bg-lime-300 hover:text-black transition-all ease-in-out duration-500"
+          className="cursor-pointer py-2 px-4 rounded-full bg-black dark:bg-white text-white dark:text-black fixed top-2 right-7 secondary-rubik text-xl hover:bg-lime-300 dark:hover:bg-yellow-300 hover:text-black dark:hover:text-black transition-all ease-in-out duration-500"
         >
           Projects
         </div>
@@ -301,7 +301,7 @@ const ProjectDetails = ({
                     rel="noopener noreferrer"
                     className="lg:w-auto w-full"
                   >
-                    <div className="cursor-pointer text-center py-2 px-4 rounded-full border border-black text-xl hover:bg-black hover:text-white transition-all ease-in-out duration-500 lg:w-auto w-full">
+                    <div className="cursor-pointer text-center py-2 px-4 rounded-full border border-black dark:border-white text-xl hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all ease-in-out duration-500 lg:w-auto w-full">
                       Website
                     </div>
                   </a>
@@ -311,7 +311,7 @@ const ProjectDetails = ({
                     rel="noopener noreferrer"
                     className="lg:w-auto w-full"
                   >
-                    <div className="cursor-pointer text-center py-2 px-4 rounded-full border border-black text-xl hover:bg-black hover:text-white transition-all ease-in-out duration-500 lg:w-auto w-full">
+                    <div className="cursor-pointer text-center py-2 px-4 rounded-full border border-black dark:border-white text-xl hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all ease-in-out duration-500 lg:w-auto w-full">
                       View
                     </div>
                   </a>
@@ -322,7 +322,7 @@ const ProjectDetails = ({
                       rel="noopener noreferrer"
                       className="lg:w-auto w-full"
                     >
-                      <div className="cursor-pointer text-center py-2 px-4 rounded-full border border-black text-xl hover:bg-black hover:text-white transition-all ease-in-out duration-500 lg:w-auto w-full">
+                      <div className="cursor-pointer text-center py-2 px-4 rounded-full border border-black dark:border-white text-xl hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all ease-in-out duration-500 lg:w-auto w-full">
                         API
                       </div>
                     </a>

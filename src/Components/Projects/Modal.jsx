@@ -61,7 +61,7 @@ const Modal = ({ modal, projects }) => {
             return (
               <div
                 key={`modal_${idx}`}
-                className="bg-black relative h-full flex justify-center items-center"
+                className="bg-black dark:bg-black relative h-full flex justify-center items-center"
               >
                 <img
                   src={project.img}

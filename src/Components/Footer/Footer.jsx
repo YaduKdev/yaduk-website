@@ -11,7 +11,7 @@ const Footer = () => {
       className="relative w-full h-[100vh] z-50"
       style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
     >
-      <div className="fixed w-full h-[100vh] bg-black text-white flex flex-col justify-between bottom-0 left-0 p-10">
+      <div className="fixed w-full h-[100vh] bg-black dark:bg-white text-white dark:text-black flex flex-col justify-between bottom-0 left-0 p-10">
         <div className="flex flex-col sm:flex-row gap-28 w-28 sm:w-full">
           <div className="menu-links-container flex flex-col text-lg md:text-xl">
             <h1 className="secondary-rubik font-bold text-xl md:text-2xl mb-6">
@@ -23,7 +23,7 @@ const Footer = () => {
                   <a
                     key={`footerp_${idx}`}
                     href={link.link}
-                    className="hover:text-lime-300"
+                    className="hover:text-lime-300 dark:hover:text-yellow-300"
                   >
                     {link.name}
                   </a>
@@ -43,7 +43,7 @@ const Footer = () => {
                     href={link.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:text-lime-300"
+                    className="hover:text-lime-300 dark:hover:text-yellow-300"
                   >
                     {link.name}
                   </a>
@@ -52,7 +52,7 @@ const Footer = () => {
               <a
                 href={cv.location}
                 download={cv.name}
-                className="hover:text-lime-300"
+                className="hover:text-lime-300 dark:hover:text-yellow-300"
               >
                 Download CV
               </a>

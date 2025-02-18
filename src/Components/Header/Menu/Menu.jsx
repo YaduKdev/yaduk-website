@@ -23,7 +23,7 @@ const Menu = ({ isActive, setIsActive }) => {
   return (
     <div className="relative">
       <motion.div
-        className="menu-dialog w-[350px] h-[500px] bg-lime-300 rounded-2xl relative flex items-center pl-4"
+        className="menu-dialog w-[350px] h-[500px] bg-lime-300 dark:bg-yellow-300 rounded-2xl relative flex items-center pl-4"
         variants={variants}
         animate={isActive ? "open" : "closed"}
         initial="closed"
@@ -39,7 +39,7 @@ const Menu = ({ isActive, setIsActive }) => {
           transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
           onClick={() => setIsActive(!isActive)}
         >
-          <div className="primary-rubik w-[100px] cursor-pointer rounded-full bg-lime-300 text-black px-4 py-2 text-center">
+          <div className="primary-rubik w-[100px] cursor-pointer rounded-full bg-lime-300 dark:bg-yellow-300  text-black px-4 py-2 text-center">
             <p>MENU</p>
           </div>
           <div className="primary-rubik w-[100px] cursor-pointer rounded-full bg-black text-white px-4 py-2 absolute top-full text-center">

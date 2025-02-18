@@ -86,7 +86,7 @@ const Intro = ({ introData }) => {
       <div id="intro-section" className="relative">
         <div
           id="intro-slider"
-          className="h-[100vh] p-10 absolute top-0 bg-white left-0 primary-rubik w-full flex flex-col justify-center gap-10 tracking-tight"
+          className="h-[100vh] p-10 absolute top-0 bg-white dark:bg-black left-0 primary-rubik w-full flex flex-col justify-center gap-10 tracking-tight"
         >
           {introData.map((intro, idx) => {
             return (
@@ -100,8 +100,11 @@ const Intro = ({ introData }) => {
             );
           })}
         </div>
-        <div className="h-[100vh] flex bg-lime-300 justify-center place-items-center">
-          <h1 id="welcome" className="text-4xl md:text-9xl primary-rubik">
+        <div className="h-[100vh] flex bg-lime-300 dark:bg-yellow-300 justify-center place-items-center">
+          <h1
+            id="welcome"
+            className="text-4xl md:text-9xl primary-rubik text-black dark:text-black"
+          >
             Welcome.
           </h1>
         </div>

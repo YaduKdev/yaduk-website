@@ -17,6 +17,13 @@ body {
   color: black;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+}
+
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;

@@ -29,7 +29,7 @@ const Home = () => {
           className="hero-text flex flex-col justify-center items-center space-y-5 text-center"
         >
           <h2 className="text-2xl lg:text-7xl primary-rubik">{name}</h2>
-          <h1 className="text-3xl lg:text-9xl primary-rubik p-4 bg-lime-300">
+          <h1 className="text-3xl lg:text-9xl primary-rubik p-4 bg-lime-300 dark:bg-yellow-300 text-black dark:text-black">
             {jobPosition}
           </h1>
           <h2 className="text-xl lg:text-3xl mt-4 secondary-rubik">

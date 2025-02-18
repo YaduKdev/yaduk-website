@@ -92,7 +92,7 @@ const Contact = () => {
             type="text"
             required
             placeholder="Name"
-            className="p-5 bg-transparent border border-black text-black rounded-md"
+            className="p-5 bg-transparent border border-black text-black dark:border-white dark:text-white rounded-md"
             name="from_name"
             value={name}
             onChange={handleName}
@@ -101,7 +101,7 @@ const Contact = () => {
             type="email"
             required
             placeholder="Email ID"
-            className="p-5 bg-transparent border border-black text-black rounded-md"
+            className="p-5 bg-transparent border border-black text-black dark:border-white dark:text-white rounded-md"
             name="from_email"
             value={email}
             onChange={handleEmail}
@@ -109,12 +109,12 @@ const Contact = () => {
           <textarea
             rows={8}
             placeholder="Message"
-            className="p-5 bg-transparent border border-black text-black rounded-md"
+            className="p-5 bg-transparent border border-black text-black dark:border-white dark:text-white rounded-md"
             name="message"
             value={message}
             onChange={handleMessage}
           />
-          <button className="border-none bg-black text-white px-4 py-2 rounded-2xl cursor-pointer primary-rubik">
+          <button className="border-none bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-2xl cursor-pointer primary-rubik">
             Send
           </button>
           <p>{success}</p>
