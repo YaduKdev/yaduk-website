@@ -159,17 +159,17 @@ const ProjectDetails = ({
       <motion.div
         {...anim(slide)}
         layoutId="projectTransition"
-        className="fixed top-0 left-0 bg-lime-300 dark:bg-yellow-300 w-full h-[100vh] z-50 flex flex-wrap justify-center items-center"
+        className="fixed top-0 left-0 bg-purple-900 dark:bg-yellow-300 w-full h-[100vh] z-50 flex flex-wrap justify-center items-center"
       >
         <motion.h1
           {...anim(slideHeadExit)}
-          className="primary-rubik text-3xl lg:text-7xl text-black dark:text-black"
+          className="primary-rubik text-3xl lg:text-7xl text-white dark:text-black"
         >
           Projects
         </motion.h1>
         <motion.h1
           {...anim(slideHeadEnter)}
-          className="primary-rubik text-3xl lg:text-7xl text-black dark:text-black"
+          className="primary-rubik text-3xl lg:text-7xl text-white dark:text-black"
         >
           {project.title}
         </motion.h1>
@@ -180,9 +180,9 @@ const ProjectDetails = ({
       >
         <div
           onClick={() => setToggleDetails({ active: false, indexValue: 0 })}
-          className="cursor-pointer py-2 px-4 rounded-full bg-black dark:bg-white text-white dark:text-black fixed top-2 right-7 secondary-rubik text-xl hover:bg-lime-300 dark:hover:bg-yellow-300 hover:text-black dark:hover:text-black transition-all ease-in-out duration-500"
+          className="cursor-pointer py-2 px-4 rounded-full bg-black dark:bg-white text-white dark:text-black fixed top-2 right-7 secondary-rubik text-xl hover:bg-purple-900 dark:hover:bg-yellow-300 hover:text-white dark:hover:text-black transition-all ease-in-out duration-500"
         >
-          Projects
+          Home
         </div>
         <div className="project-details-container w-full flex flex-col justify-center items-center px-10 mt-20 lg:px-40 gap-2">
           <div className="project-title-container w-full border-b pb-10 border-black flex justify-between items-center">

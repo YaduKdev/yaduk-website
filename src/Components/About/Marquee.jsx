@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 const Marquee = ({ marqueeData }) => {
   return (
     <div className="mx-auto">
-      <div className="flex items-center h-16 lg:h-24 bg-lime-300 dark:bg-yellow-300 text-black dark:text-black">
+      <div className="flex items-center h-16 lg:h-24 bg-purple-900 dark:bg-yellow-300 text-white dark:text-black">
         <motion.div
           initial={{ x: 0 }}
           animate={{ x: "-100%" }}

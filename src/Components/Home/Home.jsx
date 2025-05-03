@@ -29,7 +29,7 @@ const Home = () => {
           className="hero-text flex flex-col justify-center items-center space-y-5 text-center"
         >
           <h2 className="text-2xl lg:text-7xl primary-rubik">{name}</h2>
-          <h1 className="text-3xl lg:text-9xl primary-rubik p-4 bg-lime-300 dark:bg-yellow-300 text-black dark:text-black">
+          <h1 className="text-3xl lg:text-9xl primary-rubik p-4 bg-purple-900 dark:bg-yellow-300 text-white dark:text-black">
             {jobPosition}
           </h1>
           <h2 className="text-xl lg:text-3xl mt-4 secondary-rubik">
@@ -42,7 +42,7 @@ const Home = () => {
           <a
             href={cv.location}
             download={cv.name}
-            className="mt-4 text-sm lg:text-2xl rounded-full px-4 py-2 bg-black dark:bg-white text-white dark:text-black secondary-rubik hover:bg-lime-300 dark:hover:bg-yellow-300 hover:text-black dark:hover:text-black transition-all ease-in-out duration-500"
+            className="mt-4 text-sm lg:text-2xl rounded-full px-4 py-2 bg-black dark:bg-white text-white dark:text-black secondary-rubik hover:bg-purple-900 dark:hover:bg-yellow-300 hover:text-white dark:hover:text-black transition-all ease-in-out duration-500"
           >
             Download CV
           </a>

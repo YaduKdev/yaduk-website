@@ -54,7 +54,7 @@ const MenuLinks = ({ setIsActive }) => {
             <div key={idx} className="page-link-container perspective-[120px]">
               <motion.div
                 custom={idx}
-                className="page-link text-black text-3xl secondary-rubik"
+                className="page-link text-white dark:text-black text-3xl secondary-rubik"
                 variants={perspective}
                 animate="enter"
                 exit="exit"
@@ -73,7 +73,7 @@ const MenuLinks = ({ setIsActive }) => {
           return (
             <motion.a
               key={`sl_${idx}`}
-              className="text-black w-[40%] secondary-rubik"
+              className="text-white dark:text-black w-[40%] secondary-rubik"
               custom={idx}
               variants={slideIn}
               animate="enter"

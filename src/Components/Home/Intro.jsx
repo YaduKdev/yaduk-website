@@ -100,10 +100,10 @@ const Intro = ({ introData }) => {
             );
           })}
         </div>
-        <div className="h-[100vh] flex bg-lime-300 dark:bg-yellow-300 justify-center place-items-center">
+        <div className="h-[100vh] flex bg-purple-900 dark:bg-yellow-300 justify-center place-items-center">
           <h1
             id="welcome"
-            className="text-4xl md:text-9xl primary-rubik text-black dark:text-black"
+            className="text-4xl md:text-9xl primary-rubik text-white dark:text-black"
           >
             Welcome.
           </h1>
